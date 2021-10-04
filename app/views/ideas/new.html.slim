@@ -1,0 +1,12 @@
+h1 アイデアの新規登録
+.nav.justify-content-end
+  = link_to '一覧', ideas_path, class: 'nav-link'
+
+= form_with model: @idea, local: true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'idea_name'
+  .form-group
+    = f.label :body
+    = f.text_area :body, rows: 5, class: 'form-control', id: 'idea_body'
+  =f.submit nil, class: 'btn btn-primary'

@@ -1,0 +1,21 @@
+h1 アイデアの詳細
+
+.nav.justify-content-end
+  = link_to '一覧', ideas_path, class: 'nav-link'
+  table.table.table-hover
+    tbody
+      tr
+        th= Idea.human_attribute_name(:id)
+        td= @idea.id
+      tr
+        th= Idea.human_attribute_name(:name)
+        td= @idea.name
+      tr
+        th= Idea.human_attribute_name(:body)
+        td= simple_format(h(@idea.body), {}, sanitize: false, wrapper_tag: "div")
+      tr
+        th= Idea.human_attribute_name(:created_at)
+        td= @idea.created_at
+      tr
+        th= Idea.human_attribute_name(:updated_at)
+        td= @idea.updated_at
